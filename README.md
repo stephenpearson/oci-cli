@@ -15,5 +15,5 @@ region=us-phoenix-1
 
 3) Add this to your .profile:
 ```
-oci() { docker run -i -t --rm --mount type=bind,source=$HOME/.oci,target=/root/.oci stephenpearson/oci-cli "$@"; }
+oci() { docker run -i -t --rm --mount type=bind,source=$HOME/.oci,target=/root/.oci stephenpearson/oci-cli:latest "$@"; }
 ```
