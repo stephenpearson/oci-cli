@@ -1,5 +1,6 @@
-Instructions
-------------
+# Instructions
+
+## Running oci-cli
 
 1) Make sure you have Docker installed.
 
@@ -15,5 +16,13 @@ region=us-phoenix-1
 
 3) Add this to your .profile:
 ```
-oci() { docker run -i -t --rm --mount type=bind,source=$HOME/.oci,target=/root/.oci stephenpearson/oci-cli:latest "$@"; }
+oci() { docker run -t --rm --mount type=bind,source=$HOME/.oci,target=/root/.oci stephenpearson/oci-cli:latest "$@"; }
+```
+
+## Building oci-cli
+
+```
+docker build .
+docker tag <image-id> my_hub_user/oci-cli
+docker push my_hub_user/oci-cli
 ```
